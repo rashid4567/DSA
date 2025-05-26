@@ -1,4 +1,4 @@
-class Node{
+    class Node{
     constructor(data){
         this.data = data;
         this.prev = null
@@ -20,15 +20,18 @@ class DoublyLinkedList{
        newNode.prev = this.tail;
        this.tail = newNode;
     }
-    addFirst(data){
-        let newNode = new Node(data);
-        if(this.head === null){
-            this.head = this.tail = newNode;
+    removeFirst(){
+        if(!this.head)return false;
+        let value = this.head.data;
+        if(this.head === this.tail){
+            this.head = this.tail = null;
             return
+        }else{
+            this.head = this.head.next;
+            this.head.prev = null
         }
-        newNode.next = this.head;
-        this.head.prev = newNode;
-        this.head = newNode
+        return value
+        
     }
     display(){
         if(this.head === null){
@@ -52,5 +55,5 @@ DDL.addNode(24)
 DDL.addNode(23)
 DDL.addNode(22)
 DDL.addNode(21)
-DDL.addFirst(20);
+DDL.removeFirst(20);
 DDL.display()
