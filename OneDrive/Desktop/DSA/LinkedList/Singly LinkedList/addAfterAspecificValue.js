@@ -27,7 +27,7 @@ class SinglyLinkedList{
     while(current !== null && current.data !== target){
         current = current.next
     }
-    if(current == null){
+    if(current === null){
         console.log(`The ${target} is not found in the linked list`)
         return
     }
@@ -65,4 +65,4 @@ SLL.addNode(43);
 SLL.addNode(13);
 SLL.addNode(22);
 SLL.addAfterValue(16,332);
-SLL.display()
+SLL.display()    
