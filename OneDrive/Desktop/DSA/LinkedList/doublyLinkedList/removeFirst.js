@@ -27,7 +27,7 @@ class DoublyLinkedList{
             this.head = this.tail = null;
             return
         }else{
-            this.head = this.head.next;
+             this.head = this.head.next;
             this.head.prev = null
         }
         return value
