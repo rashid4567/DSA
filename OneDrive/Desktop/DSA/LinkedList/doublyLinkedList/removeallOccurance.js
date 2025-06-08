@@ -34,7 +34,7 @@ class DoublyLinkedList {
       if (current.next.data === data) {
         current.next = current.next.next;
         if (current.next) {
-          current.next.prev = null;
+          current.next.prev = current;
         } else {
           this.tail = current;
         }
