@@ -1,36 +1,58 @@
 class Node{
     constructor(data){
         this.data = data;
-        this.next = null
+        this.next = null;
     }
 }
-let head = null
-function addNod(data){
-    let newNode = new Node(data)
-    if(head === null){
-        head = newNode
-        return
+class LinkedList{
+    constructor(){
+        this.head = null;
     }
-    let current = head;
-    while(current.next !== null ){
-        current = current.next;
-        
+    addNode(data){
+        let newNode = new Node(data)
+        if(!this.head){
+            this.head = newNode
+            return
+        }
+        let current = this.head;
+        while(current.next){
+            current = current.next
+        }
+        current.next = newNode;
     }
-    current.next = newNode
-}
-function linkedListToarray(head){
- let current =head;
- let result = [];
- while(current !== null){
-     result.push(current.data);
-     current = current.next;
- }
- return result
+    toArray(){
+        if(!this.head)return null;
+        let result = [];
+        let current = this.head;
+        while(current){
+            result.push(current.data);
+            current = current.next
+        }
+        return result
+    }
+    display(){
+        if(!this.head){
+            console.log("The list is empty");
+            return;
+        }
+        let current = this.head;
+        let out = 'HEAD'
+        while(current){
+            out += ` -> [${current.data}] `
+            current = current.next
+        }
+        console.log(` ${out} -> NULL`)
+    }
 }
 
-
-addNod(12)
-addNod(32);
-addNod(14);
-addNod(94);
-console.log(linkedListToarray(head));
+let LL = new LinkedList();
+LL.addNode(23);
+LL.addNode(24);
+LL.addNode(25);
+LL.addNode(26);
+LL.addNode(27);
+LL.addNode(28);
+LL.addNode(29);
+let r = LL.toArray();
+console.log(r)
+LL.display()

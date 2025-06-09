@@ -1,74 +1,71 @@
-class Node {
-  constructor(data) {
-    this.data = data;
-    this.next = null;
-  }
+class Node{
+    constructor(data){
+        this.data = data;
+        this.next = null;
+    }
 }
-class SinglyLinkedList {
-  constructor() {
-    this.head = null;
-  }
-  addNode(data) {
-    let newNode = new Node(data);
-    if (this.head === null) {
-      this.head = newNode;
-      return;
+class SinglyLinkedList{
+    constructor(data){
+        this.head = null
     }
-    let current = this.head;
-    while (current.next !== null) {
-      current = current.next;
+    addNode(data){
+        let newNode = new Node(data);
+        if(!this.head){
+            this.head = newNode;
+            return;
+        }
+        let current = this.head;
+        while(current.next){
+            current = current.next
+        }
+        current.next = newNode
     }
-    current.next = newNode;
-  }
-  deleteNthFromEnd(n) {
-    if (!this.head) return;
-    let dummy = new Node(0);
-    dummy.next = this.head;
-    let slow = dummy;
-    let fast = dummy;
-    for (let i = 0; i <= n; i++) {
-      if (fast === null) {
-        console.log("n is larger than the length of the list");
-        return;
-      }
-      fast = fast.next;
+    deleteNthEnd(n){
+        if(!this.head)return null;
+        let dummy = new Node(0);
+            dummy.next = this.head;
+        let fast = dummy;
+        let slow = dummy;
+        for(let i=0; i<=n; i++){
+            if(!fast.next){
+        console.log(" 'n' is greater than the length of the list.");
+                return
+            }
+            fast = fast.next
+        }
+        while(fast.next){
+            fast = fast.next;
+            slow = slow.next;
+        }
+        let newHead = slow.next;
+        let out = 'HEAD';
+        let current = newHead;
+        while(current){
+            out += ` -> ${current.data} `;
+            current = current.next
+        }
+        console.log(`The linked list after the Nth to the end ${out} -> NULL`)
     }
-    while (fast !== null) {
-      slow = slow.next;
-      fast = fast.next;
+    display(){
+        if(!this.head){
+            console.log("The linked list is empty");
+            return;
+        }
+        let current = this.head;
+        let out = "HEAD";
+        while(current){
+            out += ` -> ${current.data}`;
+            current = current.next
+        }
+        console.log(` ${out} -> NULL`)
     }
-    slow.next = slow.next.next
-    this.head = dummy.next;
-  }
-
-  display() {
-    if (this.head === null) {
-      console.log("Linked list is empty");
-      return;
-    }
-    let current = this.head;
-    let out = "HEAD";
-    while (current !== null) {
-      out += ` -> ${current.data}`;
-      current = current.next;
-    }
-    out += " -> NULL";
-    console.log(out);
-  }
 }
-
-
 let SLL = new SinglyLinkedList();
-SLL.addNode(10);
-SLL.addNode(20);
-SLL.addNode(30);
-SLL.addNode(40);
-SLL.addNode(50);
-
-console.log("Original list:");
-SLL.display();
-
-SLL.deleteNthFromEnd(2);
-
-console.log("After deleting 2nd node from end:");
-SLL.display();
+SLL.addNode(34);
+SLL.addNode(35);
+SLL.addNode(36);
+SLL.addNode(37);
+SLL.addNode(38);
+SLL.addNode(39);
+SLL.deleteNthEnd(3);
+SLL.display()
