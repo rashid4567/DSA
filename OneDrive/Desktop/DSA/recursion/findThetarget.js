@@ -1,12 +1,17 @@
-function findTheTarget(arr, target, left=0, rigth=arr.length-1){
-    if(left>rigth)return arr;
-    let mid = Math.floor((left + rigth)/2);
-    if(arr[mid] === target)return mid;
-    if(arr[mid] > target){
-        return findTheTarget(arr, target, mid +1, rigth)
+function findTarget(arr, target, left =0 , right = arr.length-1){
+    if(left > right)return 0;
+    let mid = Math.floor((left + right)/2);
+    if(arr[mid] === target){
+        return mid;
+    }else if(arr[mid] > target){
+        return findTarget(arr, target, left, mid-1)
     }else{
-        return findTheTarget(arr, target, left, mid-1)
+        return findTarget(arr, target, mid+1, right)
     }
 }
-let f = ["Hello", "How","Are", "you"]
-console.log(findTheTarget(f, "How"))
+
+let arr = ["Hello", "Every","One","Are","you","ok"];
+let target = "One";
+arr.sort();
+console.log(arr)
+console.log(findTarget(arr, target))

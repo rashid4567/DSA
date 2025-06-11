@@ -27,7 +27,7 @@ class SinglyLinkedList{
     while(current !== null && current.data !== target){
         current = current.next
     }
-    if(current === null){
+    if(current === null){   
         console.log(`The ${target} is not found in the linked list`)
         return
     }
