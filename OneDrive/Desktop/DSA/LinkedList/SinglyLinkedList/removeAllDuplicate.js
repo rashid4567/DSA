@@ -34,7 +34,7 @@ class Node{
        }
        current = current.next
    }
-}
+}   
   display(){
     if(this.head === null)return false;
     let current = this.head;
