@@ -1,65 +1,66 @@
 class Node{
     constructor(data){
         this.data = data;
-        this.prev = null
         this.next = null;
+        this.prev = null;
     }
 }
-class DoublyLinkedList{
+class LinkedList{
     constructor(){
         this.head = null;
-        this.tail = null;
+        this.tail = null
     }
     addNode(data){
         let newNode = new Node(data);
-        if(this.head === null){
-            this.head = this.tail = newNode;
-            return
+        if(!this.head){
+            this.head = this.tail= newNode;
+        }else{
+            this.tail.next = newNode;
+            newNode.prev = this.tail;
+            this.tail = newNode;
         }
-       this.tail.next = newNode;
-       newNode.prev = this.tail;
-       this.tail = newNode;
     }
-    removeallduplicate(){
+    removeDuplicate(){
+        if(!this.head)return null;
         let current = this.head;
         while(current){
             let runner = current.next;
             while(runner){
-                let nextRunner = runner.next
                 if(runner.data === current.data){
-                    if(runner.next) runner.next.prev = runner.prev;
-                    if(runner.prev) runner.prev.next =runner.next
-                    if(runner === this.tail){
-                        this.tail = runner.prev
-                    }
+                    let nextRunner = runner.next;
+                    let prevRunner = runner.prev;
+                    if(nextRunner) nextRunner.prev = prevRunner;
+                    if(prevRunner) prevRunner.next = nextRunner;
+                    if(runner === this.tail) this.tail = prevRunner
                 }
-                runner = nextRunner
+                    runner = runner.next
                 
             }
             current = current.next
         }
     }
     display(){
-        if(this.head === null){
-            console.log("Linked list is empty");
-            return
+        if(!this.head){
+            console.log('THe linked list is empy+ty');
+            return;
         }
-        let current = this.tail;
-        let out = "head -->"
-        while(current !== null){
-            out += ` [${current.data}] <-->`
-            current = current.prev;
+        let current = this.head;
+        let out = "HEAD"
+        while(current){
+            out +=` <=> ${current.data}`
+            current = current.next
         }
-        out += " null"
-        console.log(out)
+        console.log(` ${out} <=> NULL`)
     }
 }
 
-let DDL = new DoublyLinkedList();
-DDL.addNode(25)
-DDL.addNode(24)
-DDL.addNode(23)
-DDL.addNode(22)
-DDL.addNode(25)
-DDL.removeallduplicate();
-DDL.display()
+
+let LL = new LinkedList();
+LL.addNode(45);
+LL.addNode(46);
+LL.addNode(47);
+LL.addNode(45);
+LL.addNode(49);
+LL.addNode(44);
+LL.removeDuplicate();
+LL.display() 

@@ -24,7 +24,6 @@ class DoublyLinkedList {
   }
 
   removeallocurance(data) {
- 
     while (this.head && this.head.data === data) {
       this.head = this.head.next;
       if (this.head) {
@@ -35,7 +34,6 @@ class DoublyLinkedList {
       }
     }
 
-   
     let current = this.head;
     while (current) {
       if (current.data === data) {
@@ -64,7 +62,6 @@ class DoublyLinkedList {
     console.log(out);
   }
 }
-
 
 let DDL = new DoublyLinkedList();
 DDL.addNode(25);
