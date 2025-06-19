@@ -9,7 +9,7 @@ function binarySearching(arr, target, low =0, high = arr.length-1){
         return binarySearching(arr, target, mid + 1, high)
     }
 }
-let arr = [1,2,433,2,13,54,56,7,45,,23,5,6,76,87,9,9,9,8,7,65]
+let arr = [1,2,433,2,13,54,56,7,45,23,5,6,76,87,9,9,9,8,7,65]
 let target = 45;
 arr = arr.sort((a,b)=> a-b)
 console.log(`The array after sort ${arr}`)
