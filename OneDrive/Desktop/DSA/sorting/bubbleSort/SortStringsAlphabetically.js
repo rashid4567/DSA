@@ -1,16 +1,17 @@
-function bubbleSortStrings(arr){
-    let swapped;
+function bubbleSort(str){
+    str = str.split(' ')
+    let  swapped;
+    let  n = str.length;
     do{
         swapped = false;
-        for(let i=0; i<arr.length-1; i++){
-            if(arr[i] > arr[i+1]){
-                [arr[i], arr[i+1]] = [arr[i+1], arr[i]];
-                swapped = true;
+        for(let i=0; i<n-1; i++){
+            if(str[i] > str[i+1]){
+                [str[i], str[i+1]] = [str[i+1], str[i]];
+                swapped = true
             }
         }
-    }while(swapped);
+    }while(swapped)
+    return str.join(' ');
 }
-
-let arr = ["welcome","to","every","one"]
-bubbleSortStrings(arr);
-console.log(arr)
+let str = "hello welcome to every one";
+console.log(bubbleSort(str));
