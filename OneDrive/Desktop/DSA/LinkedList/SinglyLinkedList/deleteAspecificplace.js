@@ -32,7 +32,7 @@ function removePointer(pos){
         current = current.next
         count++
     }
-    if(current == null) return
+    if(!current) return
     prev.next = current.next
 }
 function display(){
