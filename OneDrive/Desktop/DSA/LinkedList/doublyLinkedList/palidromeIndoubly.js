@@ -22,16 +22,18 @@ class DoublyLinkedList {
     }
   }
   ispalindrome(n) {
-    if(n<0)return false;
+    if (n < 0) return false;
     let current = this.head;
     let count = 0;
-    while(current){
-        if(count === n){
-            console.log(`The position that you are searching it is in the ${current.data}`)
-            return
-        }
-        current = current.next;
-        count++
+    while (current) {
+      if (count === n) {
+        console.log(
+          `The position that you are searching it is in the ${current.data}`
+        );
+        return;
+      }
+      current = current.next;
+      count++;
     }
   }
 
@@ -57,5 +59,5 @@ DLL.addNode(36);
 DLL.addNode(36);
 DLL.addNode(35);
 DLL.addNode(34);
- DLL.ispalindrome(2);
+DLL.ispalindrome(2);
 DLL.display();

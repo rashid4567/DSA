@@ -20,20 +20,19 @@ class SinglyLinkedList {
     }
     current.next = newNode;
   }
-  removeDuplicate(){
-      if(!this.head)return null;
-      let current = this.head;
-      let set = new Set();
-      set.add(current.data)
-      while(current.next){
-          if(set.has(current.next.data)){
-              current.next = current.next.next
-          }else{
-              set.add(current.next.data)
-                  current = current.next
-              
-          }
+  removeDuplicate() {
+    if (!this.head) return null;
+    let current = this.head;
+    let set = new Set();
+    set.add(current.data);
+    while (current.next) {
+      if (set.has(current.next.data)) {
+        current.next = current.next.next;
+      } else {
+        set.add(current.next.data);
+        current = current.next;
       }
+    }
   }
   display() {
     if (this.head == null) {
