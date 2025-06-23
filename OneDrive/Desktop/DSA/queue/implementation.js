@@ -26,7 +26,7 @@ class Queue{
     }
     display(){
         if(this.isEmpty())return "The queue is empty";
-        let out = this.item.slice(this.frond, this.rear).join(' -> ');
+        let out = this.item.slice(this.front, this.rear).join(' -> ');
         console.log(`FRENT -> ${out} -> REAR`)
     }
 }
