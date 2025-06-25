@@ -82,7 +82,7 @@ list.addNode(3);
 list.addNode(-2);
 list.addNode(4);
 
-console.log("Before Sorting:");
+console.log("Before Sorting:"); 
 list.display();
 
 list.sort();
