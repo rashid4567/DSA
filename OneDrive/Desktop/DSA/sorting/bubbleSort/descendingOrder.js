@@ -12,7 +12,6 @@ function bubbleSort(arr) {
     }
   } while (swapped);
 }
-
 let arr = [2, 3, 5, 1, 3, 4, 0, -9, 7, -7];
 bubbleSort(arr);
 console.log(arr);

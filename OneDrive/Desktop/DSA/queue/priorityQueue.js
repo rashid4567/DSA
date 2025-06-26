@@ -59,7 +59,7 @@ class priorityQueue {
 let PQ = new priorityQueue();
 PQ.enqueue(4,6)
 PQ.enqueue(5,4)
-PQ.enqueue(6,3)
+PQ.enqueue(6,3) 
 PQ.enqueue(7,2)
 PQ.enqueue(8,1)
 PQ.enqueue(9,6)

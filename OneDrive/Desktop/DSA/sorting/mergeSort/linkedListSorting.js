@@ -75,17 +75,17 @@ class LinkedList {
   }
 }
 
-let list = new LinkedList();
-list.addNode(5);
-list.addNode(1);
-list.addNode(3);
-list.addNode(-2);
-list.addNode(4);
+  let list = new LinkedList();
+  list.addNode(5);
+  list.addNode(1);
+  list.addNode(3);
+  list.addNode(-2);
+  list.addNode(4);
 
-console.log("Before Sorting:"); 
-list.display();
+  console.log("Before Sorting:"); 
+  list.display();
 
-list.sort();
+  list.sort();
 
-console.log("After Sorting:");
-list.display();
+  console.log("After Sorting:");
+  list.display();

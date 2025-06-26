@@ -10,7 +10,6 @@ function isAnagram(s,t){
     }
     return true;
 }
-
 let s = "hello";
 let t = "elolh";
 console.log(isAnagram(s,t))

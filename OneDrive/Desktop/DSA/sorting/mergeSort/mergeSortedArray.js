@@ -11,7 +11,6 @@ function mergeSortArray(arr1,arr2){
             j++;
         }
     }
-
     while(i <arr1[i]){
         merged.push(arr1[i]);
         i++;

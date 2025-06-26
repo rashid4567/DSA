@@ -32,17 +32,17 @@ class Queue{
 }
 function reverse(queue){
     if(q.isEmpty())return;
-    let front = q.dequeue();
+    let front = q.deQueue();
     reverse(queue);
-    q.enqueue(front)
+    q.enQueue(front)
 }
 
 let q = new Queue();
-q.enqueue(4);
-q.enqueue(5);
-q.enqueue(1);
-q.enqueue(9);
-q.enqueue(7);
+q.enQueue(4);
+q.enQueue(5);
+q.enQueue(1);
+q.enQueue(9);
+q.enQueue(7);
 q.display();
 
 console.log("After reverse : -");
