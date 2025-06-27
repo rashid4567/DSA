@@ -8,7 +8,7 @@ class priorityQueue {
     const newElement = { element, priority };
     let inserted = false;
     for (let i = this.front; i < this.rear; i++) {
-      if (this.item[i].element < priority) {
+      if (this.item[i].priority < priority) {
         this.item.splice(i, 0, newElement);
         this.rear++;
         inserted = true;
