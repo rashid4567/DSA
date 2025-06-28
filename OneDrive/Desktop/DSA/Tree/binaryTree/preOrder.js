@@ -1,12 +1,11 @@
 class Node{
     constructor(data){
-        this.data = data;
-        this.left = null;
+        this.data =data;
         this.right = null;
+        this.left = null;
     }
 }
-
-class BynarySearchTree{
+class BinarySearch{
     constructor(){
         this.root = null;
     }
@@ -15,37 +14,38 @@ class BynarySearchTree{
         if(!this.root){
             this.root = newNode;
         }else{
-            this.insertNode(this.root, newNode)
+            return this.insertNode(this.root, newNode)
         }
     }
     insertNode(current, newNode){
         if(newNode.data < current.data){
             if(!current.left){
-                current.left = newNode
+                current.left = newNode;
             }else{
-                this.insertNode(current.left, newNode)
+                return this.insertNode(current.left, newNode)
             }
         }else{
             if(!current.right){
-                current.right = newNode;
+                current.right = newNode
             }else{
-                this.insertNode(current.right, newNode)
+                return this.insertNode(current.right, newNode)
             }
         }
     }
-    inOrder(node = this.root){
+    preOrder(node = this.root){
         if(node){
-            this.inOrder(node.left);
             console.log(node.data);
-            this.inOrder(node.right)
+            this.preOrder(node.left);
+            this.preOrder(node.right)
         }
     }
 }
-let BST = new BynarySearchTree();
-BST.insert(45);
-BST.insert(15);
-BST.insert(35);
-BST.insert(25);
+let BST = new BinarySearch();
+BST.insert(4);
 BST.insert(5);
-console.log("inOrder :- ");
-BST.inOrder()
+BST.insert(8);
+BST.insert(12);
+BST.insert(3);
+BST.insert(87);
+console.log('Pre-Order');
+BST.preOrder()
