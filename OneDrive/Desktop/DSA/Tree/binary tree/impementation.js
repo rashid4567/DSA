@@ -7,13 +7,12 @@ class Node {
     }
 }
 
-// Binary Tree class
+// Optimized Binary Tree class without using shift()
 class BinaryTree {
     constructor() {
         this.root = null;
     }
 
-    // Insert node level by level (left to right)
     insert(data) {
         const newNode = new Node(data);
         if (!this.root) {
@@ -22,9 +21,10 @@ class BinaryTree {
         }
 
         const queue = [this.root];
+        let front = 0;
 
-        while (queue.length > 0) {
-            const current = queue.shift();
+        while (front < queue.length) {
+            const current = queue[front++];
 
             if (!current.left) {
                 current.left = newNode;
@@ -42,7 +42,6 @@ class BinaryTree {
         }
     }
 
-    // Inorder: Left → Root → Right
     inorder(node = this.root) {
         if (node) {
             this.inorder(node.left);
@@ -51,7 +50,6 @@ class BinaryTree {
         }
     }
 
-    // Preorder: Root → Left → Right
     preorder(node = this.root) {
         if (node) {
             console.log(node.data);
@@ -60,7 +58,6 @@ class BinaryTree {
         }
     }
 
-    // Postorder: Left → Right → Root
     postorder(node = this.root) {
         if (node) {
             this.postorder(node.left);
@@ -69,16 +66,43 @@ class BinaryTree {
         }
     }
 
-    // Level Order: Top to bottom, left to right
     levelOrder() {
         if (!this.root) return;
-        const queue = [this.root];
 
-        while (queue.length > 0) {
-            const node = queue.shift();
+        const queue = [this.root];
+        let front = 0;
+
+        while (front < queue.length) {
+            const node = queue[front++];
             console.log(node.data);
+
             if (node.left) queue.push(node.left);
             if (node.right) queue.push(node.right);
         }
     }
 }
+
+
+const tree = new BinaryTree();
+
+// Insert nodes
+tree.insert(1);
+tree.insert(2);
+tree.insert(3);
+tree.insert(4);
+tree.insert(5);
+tree.insert(6);
+tree.insert(7);
+
+// Display traversals
+console.log("Inorder Traversal:");
+tree.inorder();
+
+console.log("\nPreorder Traversal:");
+tree.preorder();
+
+console.log("\nPostorder Traversal:");
+tree.postorder();
+
+console.log("\nLevel Order Traversal:");
+tree.levelOrder();
