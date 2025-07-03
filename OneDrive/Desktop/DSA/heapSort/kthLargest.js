@@ -78,7 +78,7 @@ class MinHeap {
     }
 }
 
-function findKthLargest(arr, k){
+function findKthSmallest(arr, k){
     let minheap = new MinHeap();
     for(let num of arr){
         minheap.insert(num)
@@ -90,4 +90,4 @@ function findKthLargest(arr, k){
 }
 let arr = [7, 10, 4, 3, 20, 15];
 let k = 3;
-console.log(`The ${k}rd largest element is:`, findKthLargest(arr, k)); 
+console.log(`The ${k}rd smallest element is:`, findKthSmallest(arr, k)); 

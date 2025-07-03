@@ -1,48 +1,57 @@
-class Graph{
-    constructor(isDirected = false){
+class Graph {
+    constructor(isDirected = false) {
         this.adjList = {};
         this.isDirected = isDirected;
     }
-    addVertex(vertex){
-        if(!this.adjList[vertex]){
-            this.adjList[vertex] = new Set()
+    addVertex(vertex) {
+        if (!this.adjList[vertex]) {
+            this.adjList[vertex] = new Set();
         }
     }
-    addEdges(v1, v2){
+    addEdge(v1, v2) {
         this.addVertex(v1);
         this.addVertex(v2);
 
-        this.adjList[v1].add(v2)
-        if(!this.isDirected){
-            this.adjList[v2].add(v1)
+        this.adjList[v1].add(v2);
+        if (!this.isDirected) {
+            this.adjList[v2].add(v1);
         }
     }
-    clone(){
-        let newGraph = new Graph(this.isDirected);
-        for(let node in this.adjList){
-            newGraph.addVertex(node)
+    deleteEdge(v1, v2) {
+        if (this.adjList[v1]) {
+            this.adjList[v1].delete(v2);
         }
-
-        for(let node in this.adjList){
-            for(let n of this.adjList[node]){
-                if(this.isDirected || node < n){
-                   newGraph.addEdges(node, n)   
-                }
-            }
+        if (!this.isDirected && this.adjList[v2]) {
+            this.adjList[v2].delete(v1);
         }
-        return newGraph;
     }
-    print(){
-        for(let v in this.adjList){
-            console.log(`${v}-> ${[...this.adjList[v]].join(", ")}`)
+    deleteVertex(vertex) {
+        if (!this.adjList[vertex]) return;
+        for (let otherVertex in this.adjList) {
+            this.adjList[otherVertex].delete(vertex);
+        }
+        delete this.adjList[vertex];
+    }
+    printGraph() {
+        for (let vertex in this.adjList) {
+            console.log(vertex, '->', [...this.adjList[vertex]]);
         }
     }
 }
+const g = new Graph(false); 
 
-let g = new Graph(false);
-g.addEdges("A", "B");
-g.addEdges("A", "C");
-g.addEdges("B", "C");
-g.addEdges("C", "A");
-const clone = g.clone()
-clone.print()
+g.addEdge("A", "B");
+g.addEdge("A", "C");
+g.addEdge("B", "D");
+g.addEdge("D", "E");
+
+console.log("🌐 Original Graph:");
+g.printGraph();
+
+g.deleteEdge("A", "B");
+console.log("\n🗑️ After deleting edge A-B:");
+g.printGraph();
+
+g.deleteVertex("D");
+console.log("\n🗑️ After deleting vertex D:");
+g.printGraph();

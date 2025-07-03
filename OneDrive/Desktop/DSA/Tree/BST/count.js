@@ -30,7 +30,7 @@ class BinarySearch{
             }else{
                 this.insertNode(current.right, newNode)
             }
-        }
+        }   
     }
     countNodes(node = this.root){
         if(!node)return 0;

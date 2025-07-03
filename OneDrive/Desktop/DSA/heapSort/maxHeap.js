@@ -56,14 +56,14 @@ class MaxHeap{
         console.log(this.heap)
     }
 }
-const maxHeap = new MaxHeap();
-maxHeap.insert(10);
-maxHeap.insert(5);
-maxHeap.insert(3);
-maxHeap.insert(20);
-maxHeap.insert(15);
+    const maxHeap = new MaxHeap();
+    maxHeap.insert(10);
+    maxHeap.insert(5);
+    maxHeap.insert(3);
+    maxHeap.insert(20);
+    maxHeap.insert(15);
 
-maxHeap.printHeap();          
-console.log(maxHeap.peek());  
-console.log(maxHeap.extractMax()); 
-maxHeap.printHeap();         
+    maxHeap.printHeap();          
+    console.log(maxHeap.peek());  
+    console.log(maxHeap.extractMax()); 
+    maxHeap.printHeap();         

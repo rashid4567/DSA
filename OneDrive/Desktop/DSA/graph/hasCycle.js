@@ -31,7 +31,7 @@ class Graph{
             for(let n of this.adjList[node]){
                 if(dfsCycle(n))return true
             }
-                visited[node] = false;
+                reStack[node] = false;
                 return false;
         }
         for(let node in this.adjList){
