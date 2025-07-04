@@ -18,22 +18,23 @@ class Graph{
         }
     }
   bfs(start){
-      let visited = new Set();
-      const queue = [start];
-      
-      while(queue.length > 0){
-          const node = queue.shift();
-          console.log(node);
-          visited.add(node);
-          
-          for(let n of this.adjList[node]){
-              if(!visited.has(n)){
-                  visited.add(n)
-                  queue.push(n)
-              }
-          }
-      }
-  }
+    let visited = new Set();
+    let queue = [start];
+    visited.add(start);
+    
+    while(queue.length > 0){
+        const node = queue.shift();
+        console.log(node);
+        
+        for(let n of this.adjList[node]){
+            if(!visited.has(n)){
+                visited.add(n);
+                queue.push(n)
+            }
+        }
+    }
+}
+  
     print(){
         for(let vertex in this.adjList){
             console.log(`${vertex} -> ${[...this.adjList[vertex]].join(", ")}`)
