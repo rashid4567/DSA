@@ -41,11 +41,11 @@ class Graph{
     }
 }
 
-const g = new Graph(true);
+    const g = new Graph(true);
 
-g.addEdge("A", "B");
-g.addEdge("A", "C");
-g.addEdge("B", "D");
-g.addEdge("C", "D");
-g.addEdge("D", "A"); 
-console.log(`\n🌀 Cycle Present? ${g.hasCycle() ? "Yes" : "No"}`);
+    g.addEdge("A", "B");
+    g.addEdge("A", "C");
+    g.addEdge("B", "D");
+    g.addEdge("C", "D");
+    g.addEdge("D", "A"); 
+    console.log(`\n🌀 Cycle Present? ${g.hasCycle() ? "Yes" : "No"}`);
