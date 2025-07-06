@@ -1,4 +1,4 @@
-// Node class for BST
+
 class TreeNode {
     constructor(val) {
         this.val = val;
@@ -7,7 +7,7 @@ class TreeNode {
     }
 }
 
-// BST class with insert method
+
 class BST {
     constructor() {
         this.root = null;
@@ -41,7 +41,7 @@ class BST {
     }
 }
 
-// ✅ Function to check if the tree is balanced
+
 function isBalanced(root) {
     const checkHeight = (node) => {
         if (!node) return 0;
@@ -60,14 +60,14 @@ function isBalanced(root) {
     return checkHeight(root) !== -1;
 }
 
-// 🧪 Test 1: Balanced BST
+
 const bst1 = new BST();
 [10, 5, 15, 3, 7, 12, 17].forEach(val => bst1.insert(val));
 
-console.log("Is BST1 Balanced? →", isBalanced(bst1.root)); // ✅ true
+console.log("Is BST1 Balanced? →", isBalanced(bst1.root)); 
 
-// 🧪 Test 2: Unbalanced BST
+
 const bst2 = new BST();
-[10, 20, 30, 40, 50].forEach(val => bst2.insert(val)); // Skewed tree
+[10, 20, 30, 40, 50].forEach(val => bst2.insert(val));
 
-console.log("Is BST2 Balanced? →", isBalanced(bst2.root)); // ❌ false
+console.log("Is BST2 Balanced? →", isBalanced(bst2.root)); 
