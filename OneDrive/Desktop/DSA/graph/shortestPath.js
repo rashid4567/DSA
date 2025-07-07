@@ -14,7 +14,7 @@ class Graph{
 
         this.adjList[v1].add(v2);
         if(!this.isDirected){
-            this.adjList[v2].add(v2)
+            this.adjList[v2].add(v1)
         }
     }
     shortestPath(start, target){
