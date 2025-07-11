@@ -35,11 +35,14 @@ class BST{
             }
         }
     }
-    countSingleChild(node =this.root){
-        if(!node)return 0;
-        if(!node.left && !node.right)return 0;
-        if(!node.left || !node.right)return 1 + this.countSingleChild(node.left) + this.countSingleChild(node.right);
-        return this.countSingleChild(node.left) + this.countSingleChild(node.right)
+    countSingle(node = this.root){
+       if(!node)return 0;
+       let left = this.countSingle(node.left);
+       let right = this.countSingle(node.right);
+       if((node.left && !node.right) || (!node.left && node.right)){
+           return 1 + left + right
+       }
+       return left + right
     }
 }
 let bst = new BST();
