@@ -79,7 +79,7 @@ pq.enqueue("Task A", 3);
 pq.enqueue("Task B", 1);
 pq.enqueue("Task C", 2);
 
-pq.print();
+  pq.print();
 
-console.log(pq.dequeue());
-console.log(pq.peek());
+  console.log(pq.dequeue());
+  console.log(pq.peek());

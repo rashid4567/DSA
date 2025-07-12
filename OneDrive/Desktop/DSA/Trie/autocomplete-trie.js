@@ -67,3 +67,4 @@ trie.insert("bat");
 console.log(trie.autocomplete("ap"));
 console.log(trie.autocomplete("b"));
 console.log(trie.autocomplete("z"));
+  
