@@ -32,14 +32,14 @@ class Queue{
 }
 
 
-let q = new Queue();
-q.enqueue(5);
-q.enqueue(6);
-q.enqueue(1);
-q.enqueue(8);
-q.enqueue(3);
-q.display();
-console.log("After delete :-",q.dequeue());
-console.log('peek :', q.peek());
+    let q = new Queue();
+    q.enqueue(5);
+    q.enqueue(6);
+    q.enqueue(1);
+    q.enqueue(8);
+    q.enqueue(3);
+    q.display();
+    console.log("After delete :-",q.dequeue());
+    console.log('peek :', q.peek());
 
-q.display()
+    q.display()

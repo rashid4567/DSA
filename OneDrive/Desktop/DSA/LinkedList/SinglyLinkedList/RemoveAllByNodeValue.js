@@ -25,6 +25,7 @@ function removeNodeByValue(value){
     while(current !== null && current.next !== null){
         if(current.next.data === value){
             current.next = current.next.next;
+            
         }
         current = current.next
     }

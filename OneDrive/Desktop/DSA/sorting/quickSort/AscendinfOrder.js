@@ -13,4 +13,4 @@ function quickSort(arr){
     return [...quickSort(left), pivot, ...quickSort(right)]
 }
 let arr = [3,5,-5,3,-5,2,5,-3,9]
-console.log(quickSort(arr))
+console.log(quickSort(arr)) 

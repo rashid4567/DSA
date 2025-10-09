@@ -14,7 +14,7 @@ function recSum(n) {
   if (n <= 0) return 0;
   if (n % 2 === 0) {
     return n + recSum(n - 2);
-  } else {
+  } else {   
     return n - 1;
   }
 }
