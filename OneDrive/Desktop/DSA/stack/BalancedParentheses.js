@@ -8,6 +8,7 @@ class Stack {
   pop() {
     if (this.isEmpty()) {
       return "The stack is empty";
+      return
     }
     return this.Stack.pop();
   }

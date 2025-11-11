@@ -43,15 +43,15 @@ class Trie {
   }
 }
 
-const trie = new Trie();
+  const trie = new Trie();
 
-trie.insert("apple");
-trie.insert("app");
-trie.insert("ape");
-trie.insert("bat");
-trie.insert("cat");
+  trie.insert("apple");
+  trie.insert("app");
+  trie.insert("ape");
+  trie.insert("bat");
+  trie.insert("cat");
 
-console.log(trie.searchInSentence("I have a bat"));
-console.log(trie.searchInSentence("She owns a dog"));
-console.log(trie.searchInSentence("An ape lives here"));
-console.log(trie.searchInSentence("They ate apples"));
+  console.log(trie.searchInSentence("I have a bat"));
+  console.log(trie.searchInSentence("She owns a dog"));
+  console.log(trie.searchInSentence("An ape lives here"));
+  console.log(trie.searchInSentence("They ate apples"));

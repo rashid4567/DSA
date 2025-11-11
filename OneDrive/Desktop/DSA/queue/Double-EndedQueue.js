@@ -28,7 +28,7 @@ class Deque{
             console.log("The queue is empty");
             return null;
         }
-        this.rear--;
+        this.rear--;    
         let removed = this.item[this.rear];
         this.item[this.rear] = null;
         return removed;

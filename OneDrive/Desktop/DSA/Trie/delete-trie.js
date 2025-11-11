@@ -77,7 +77,7 @@ let trie = new Trie();
   "app",
   "india",
   "europe",
-  "russia",
+  "russia", 
 ].forEach((x) => trie.insert(x));
 
 console.log("Before delete:", trie.suggest("a"));
