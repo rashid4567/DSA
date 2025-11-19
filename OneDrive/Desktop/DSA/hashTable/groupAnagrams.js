@@ -11,5 +11,5 @@ function groupAnagrams(words){
   return Object.values(map)
 }
 
-console.log(groupAnagrams(["eat","tea","tan","ate","nat","bat"]))
+  console.log(groupAnagrams(["eat","tea","tan","ate","nat","bat"]))
 
