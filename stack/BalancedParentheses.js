@@ -45,5 +45,5 @@ function isBalanced(expression) {
   return stack.isEmpty();
 }
 
-console.log(isBalanced("({[]})"));
-console.log(isBalanced("({[})"));
+  console.log(isBalanced("({[]})"));
+  console.log(isBalanced("({[})"));
