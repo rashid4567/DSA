@@ -33,7 +33,7 @@ class LinkedList{
                    current.next.prev =newNode;
                }else{
                    this.tail = newNode;
-               }
+               }    
                current.next = newNode;
            }
            current = current.next
