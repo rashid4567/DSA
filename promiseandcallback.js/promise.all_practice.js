@@ -16,12 +16,16 @@ function f2(){
 
 
 const calculate = async () =>{
-    const [a,b] = await Promise.all([
+   try{
+     const [a,b] = await Promise.all([
         f1(),
         f2(),
     ])
-
-    console.log(a + b);
+    const sum = a + b;
+    console.log(sum);
+   }catch(err){
+    console.log(err);
+   }
 }
 
 

@@ -13,3 +13,12 @@ function reverse(str, index = str.length - 1) {
 }
 
 console.log(reverse(str));
+
+function reverseArray(arr,index = arr.length-1){
+  if(index < 0)return [];
+  return [arr[index], ...reverseArray(arr, index - 1)]
+}
+
+
+const arr = [1,2,3,4,5];
+console.log(reverseArray(arr));

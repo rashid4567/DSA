@@ -29,7 +29,7 @@ class DoublyLinkedList {
       if (this.head) {
         this.head.prev = null;
       } else {
-        this.tail = null;
+        this.tail = null; 
         return;
       }
     }

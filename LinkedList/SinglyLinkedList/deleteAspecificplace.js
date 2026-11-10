@@ -18,21 +18,34 @@ function addNode(data) {
   current.next = newNode;
 }
 function removePointer(pos) {
-  if (head === null || pos < 0) return;
-  if (pos === 0) {
-    head = head.next;
+  if(!this.head){
+    console.log("The list is empty");
     return;
   }
-  let current = head;
-  let prev = null;
+
+  if(pos < 0){
+    console.log("Invalid position");
+    return;
+  }
+
+  if(pos === 0){
+    this.head = this.head.next;
+    return;
+  }
+
+  let current = this.head;
   let count = 0;
-  while (current !== null && count < pos) {
-    prev = current;
+  while(current && count < pos - 1){
     current = current.next;
     count++;
   }
-  if (!current) return;
-  prev.next = current.next;
+
+  if(!current || !current.next){
+    console.log(`Invalid position`);
+    return;
+  }
+
+  current.next = current.next.next;    
 }
 function display() {
   if (head === null) {

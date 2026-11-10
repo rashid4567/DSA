@@ -37,3 +37,19 @@ function find(arr){
 }
 
 console.log(find(departments))
+
+//other method with the forloop;
+
+
+function find(arr){
+  let res = [];
+  for(let emp of arr){
+    for(let n of emp.employees){
+      if(n.salary > 80000){
+        res.push(n);
+      }
+    }
+  }
+  return res
+}
+console.log(find(departments))

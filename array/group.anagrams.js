@@ -1,5 +1,4 @@
-
-const words =  ["eat", "tea", "tan", "ate", "nat", "bat"]
+const words = ["eat", "tea", "tan", "ate", "nat", "bat"];
 
 // Output:
 // [
@@ -8,23 +7,20 @@ const words =  ["eat", "tea", "tan", "ate", "nat", "bat"]
 //   ["bat"]
 // ]
 
+function groupAnagrams(words) {
+  let map = new Map();
 
-function groupAnagrams(words){
-    let map = new Map();
-    
-    for(let word of words){
-        const key = word.split("").sort().join("");
-        
-        if(!map.has(key)){
-            map.set(key,[])
-        }
-        
-        map.get(key).push(word)
+  for (let word of words) {
+    const key = word.split("").sort().join("");
+
+    if (!map.has(key)) {
+      map.set(key, []);
     }
-    
-    return [...map.values()]
+
+    map.get(key).push(word);
+  }
+
+  return [...map.values()];
 }
 
-
-
-console.log(groupAnagrams(words))
+console.log(groupAnagrams(words));

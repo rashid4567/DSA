@@ -22,29 +22,38 @@ class SinglyLinkedList{
     }
     deleteNthEnd(n){
         if(!this.head)return null;
+
+        if(!Number.isInteger(n) || n <= 0){
+            console.log("N should be a positive integer");
+            return;
+        }
+
         let dummy = new Node(0);
-            dummy.next = this.head;
+        dummy.next = this.head;
+
         let fast = dummy;
         let slow = dummy;
-        for(let i=0; i<=n; i++){
+
+        for(let i=0; i<n; i++){
             if(!fast.next){
-        console.log(" 'n' is greater than the length of the list.");
-                return
+                console.log(`N should not be greater than the length of the list`);
+                return;
             }
-            fast = fast.next
+
+            fast = fast.next;
         }
+
         while(fast.next){
             fast = fast.next;
             slow = slow.next;
         }
-        let newHead = slow.next;
-        let out = 'HEAD';
-        let current = newHead;
-        while(current){
-            out += ` -> ${current.data} `;
-            current = current.next
-        }
-        console.log(`The linked list after the Nth to the end ${out} -> NULL`)
+
+        slow.next = slow.next.next;
+
+        this.head = dummy.next;
+
+        return this.head;
+        
     }
     display(){
         if(!this.head){
