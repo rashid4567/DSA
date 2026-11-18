@@ -22,7 +22,7 @@ class DoublyLinkedList {
     }
   }
   RemoveAfterMiddle() {
-    if (!this.head || !this.head.next) return null;
+    if (!this.head || !this.head.next) return;
     let fast = this.head;
     let slow = this.head;
     while (fast && fast.next) {
@@ -30,15 +30,15 @@ class DoublyLinkedList {
       fast = fast.next.next;
     }
     let removeNode = slow.next;
-    if (removeNode) {
-      slow.next = removeNode.next;
-      if (removeNode.next) {
-        removeNode.next.prev = slow;
-      } else {
-        this.tail = slow;
-      }
+    if (!removeNode) return;
+    slow.next = removeNode.next;
+    if (removeNode.next) {
+      removeNode.next.prev = slow;
+    } else {
+      this.tail = slow;
     }
   }
+
   display() {
     if (!this.head) {
       console.log("Linked list is empty");

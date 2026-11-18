@@ -9,21 +9,19 @@ let arr = [1, "hello", true, 2, "world", false]
 // }
 
 function find(arr){
-    let number = [];
-    let string = [];
-    let boolean = [];
+    let res = {};
 
     for(let item of arr){
-        if(typeof item === "number")number.push(item);
-        if(typeof item === "string")string.push(item);
-        if(typeof item === "boolean")boolean.push(item);
+        let type = typeof item;
+        
+        if(!res[type]){
+            res[type] = []
+        }
+
+        res[type].push(item)
     }
 
-    return {
-        Number : number,
-        String : string,
-        Boolean : boolean,
-    }
+    return res;
 }
 
 console.log(find(arr))

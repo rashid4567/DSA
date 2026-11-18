@@ -1,7 +1,7 @@
 function decompress(str){
     let res = "";
 
-    for(let i=0; i< str.length; i+=2){
+    for(let i=0; i< str.length; i+=2){ 
         let char = str[i];
         let count = Number(str[i + 1]);
 

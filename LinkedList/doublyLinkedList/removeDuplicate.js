@@ -35,7 +35,7 @@ class LinkedList{
                 }
                     runner = runner.next
                 
-            }
+            }   
             current = current.next
         }
     }

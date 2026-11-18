@@ -24,25 +24,31 @@ class DoublyLinkedList {
   }
 
   removeallocurance(data) {
-    while (this.head && this.head.data === data) {
-      this.head = this.head.next;
-      if (this.head) {
-        this.head.prev = null;
-      } else {
-        this.tail = null; 
-        return;
-      }
+    if (!this.head) {
+      console.log("It is empty");
+      return;
     }
 
     let current = this.head;
+
     while (current) {
       if (current.data === data) {
-        let prevNode = current.prev;
         let nextNode = current.next;
-        if (prevNode) prevNode.next = nextNode;
-        if (nextNode) nextNode.prev = prevNode;
-        if (current === this.tail) this.tail = prevNode;
+        let prevNode = current.prev;
+
+        if (prevNode) {
+          prevNode.next = nextNode;
+        } else {
+          this.head = nextNode;
+        }
+
+        if (nextNode) {
+          nextNode.prev = prevNode;
+        } else {
+          this.tail = prevNode;
+        }
       }
+
       current = current.next;
     }
   }
