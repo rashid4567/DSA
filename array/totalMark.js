@@ -1,26 +1,26 @@
 const employees = [
-    { name: "A", marks: [32, 75, 34, 67, 45] },
-    { name: "B", marks: [65, 86, 23, 100, 43] },
-    { name: "C", marks: [22, 67, 89, 65, 34] }
+  { name: "A", marks: [32, 75, 34, 67, 45] },
+  { name: "B", marks: [65, 86, 23, 100, 43] },
+  { name: "C", marks: [22, 67, 89, 65, 34] },
 ];
 
-function find(arr){
-    let res = {};
-    for(let n of arr){
-        let sum = n.marks.reduce((a,b)=> a + b,0);
-        res[n.name] = sum
-    }
-    return res
+function find(arr) {
+  let res = {};
+  for (let n of arr) {
+    let sum = n.marks.reduce((a, b) => a + b, 0);
+    res[n.name] = sum;
+  }
+  return res;
 }
 
-console.log(find(employees))
+console.log(find(employees));
 
 //or
 
 let students = [
-    { name: "A", marks: [32, 75, 34, 67, 45] },
-    { name: "B", marks: [65, 86, 23, 100, 43] },
-    { name: "C", marks: [22, 67, 89, 65, 34] }
+  { name: "A", marks: [32, 75, 34, 67, 45] },
+  { name: "B", marks: [65, 86, 23, 100, 43] },
+  { name: "C", marks: [22, 67, 89, 65, 34] },
 ];
 
 // Find the total marks for each student.
@@ -32,14 +32,14 @@ let students = [
 //   { name: "C", total: 277 }
 // ]
 
-function find(arr){
-    return arr.map((std)=>{
-        let total = std.marks.reduce((a,b)=> a + b, 0);
-        return {
-            name : std.name,
-            total : total
-        }
-    })
+function find(arr) {
+  return arr.map((std) => {
+    let total = std.marks.reduce((a, b) => a + b, 0);
+    return {
+      name: std.name,
+      total: total,
+    };
+  });
 }
 
-console.log(find(students))
+console.log(find(students));

@@ -1,5 +1,4 @@
-let arr = [1, "hello", true, 2, "world", false]
-
+let arr = [1, "hello", true, 2, "world", false];
 
 //expected output
 //   {
@@ -8,20 +7,20 @@ let arr = [1, "hello", true, 2, "world", false]
 //   boolean: [true, false]
 // }
 
-function find(arr){
-    let res = {};
+function find(arr) {
+  let res = {};
 
-    for(let item of arr){
-        let type = typeof item;
-        
-        if(!res[type]){
-            res[type] = []
-        }
+  for (let item of arr) {
+    let type = typeof item;
 
-        res[type].push(item)
+    if (!res[type]) {
+      res[type] = [];
     }
 
-    return res;
+    res[type].push(item);
+  }
+
+  return res;
 }
 
-console.log(find(arr))
+console.log(find(arr));

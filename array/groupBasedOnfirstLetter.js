@@ -13,4 +13,3 @@ function group(arr) {
 }
 
 console.log(group(arr));
-

@@ -1,20 +1,19 @@
-let Input= [1,2,3,4,5]
+let Input = [1, 2, 3, 4, 5];
 
-
-function find(arr){
+function find(arr) {
   let res = [];
-  for(let i=0; i<arr.length; i++){
+  for (let i = 0; i < arr.length; i++) {
     let product = 1;
 
-    for(let j = 0; j<arr.length; j++){
-        if(i !== j){
-            product *= arr[j]
-        }
+    for (let j = 0; j < arr.length; j++) {
+      if (i !== j) {
+        product *= arr[j];
+      }
     }
 
-    res.push(product)
+    res.push(product);
   }
-  return res
+  return res;
 }
 
-console.log(find(Input))
+console.log(find(Input));

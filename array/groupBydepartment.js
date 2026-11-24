@@ -1,10 +1,9 @@
-
 let arr = [
- {name:"John",dept:"IT"},
- {name:"Alex",dept:"HR"},
- {name:"Sam",dept:"IT"},
- {name:"David",dept:"Sales"}
-]
+  { name: "John", dept: "IT" },
+  { name: "Alex", dept: "HR" },
+  { name: "Sam", dept: "IT" },
+  { name: "David", dept: "Sales" },
+];
 
 // Output:
 
@@ -21,16 +20,15 @@ let arr = [
 //  ]
 // }
 
-
-function find(arr){
-    let res = [];
-    for(let n of arr){
-        if(!res[n.dept]){
-            res[n.dept] = []
-        }
-        res[n.dept].push(n)
+function find(arr) {
+  let res = [];
+  for (let n of arr) {
+    if (!res[n.dept]) {
+      res[n.dept] = [];
     }
-    return res
+    res[n.dept].push(n);
+  }
+  return res;
 }
 
-console.log(find(arr))
+console.log(find(arr));
